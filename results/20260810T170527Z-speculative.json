@@ -1,0 +1,31 @@
+{
+  "label": "speculative",
+  "target": "local",
+  "model": "glimmer",
+  "timestamp": "2026-08-10T17:05:27.835240+00:00",
+  "passed": 2,
+  "total": 2,
+  "mean_tok_s": 23.6,
+  "results": [
+    {
+      "text": "391",
+      "wall_s": 3.351,
+      "completion_tokens": 56,
+      "wall_tok_s": 16.71,
+      "server_tok_s": 21.99,
+      "prompt_tok_s": 89.36,
+      "id": "smoke-arithmetic",
+      "pass": true
+    },
+    {
+      "text": "m.reyes@example.org",
+      "wall_s": 6.247,
+      "completion_tokens": 147,
+      "wall_tok_s": 23.53,
+      "server_tok_s": 25.22,
+      "prompt_tok_s": 84.87,
+      "id": "smoke-extraction",
+      "pass": true
+    }
+  ]
+}

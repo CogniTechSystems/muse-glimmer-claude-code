@@ -1,0 +1,8 @@
+models/
+.venv/
+__pycache__/
+.cache/
+.DS_Store
+
+# unpublished until the article goes out
+article/

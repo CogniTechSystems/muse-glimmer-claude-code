@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-label="Claude Code running locally on Muse-Glimmer-30B">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#161b27"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f97316"/>
+      <stop offset="0.5" stop-color="#e879f9"/>
+      <stop offset="1" stop-color="#38bdf8"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="320" rx="16" fill="url(#bg)"/>
+  <rect x="0.5" y="0.5" width="1199" height="319" rx="16" fill="none" stroke="#2d333f"/>
+
+  <!-- terminal chrome -->
+  <circle cx="36" cy="34" r="7" fill="#ff5f57"/>
+  <circle cx="60" cy="34" r="7" fill="#febc2e"/>
+  <circle cx="84" cy="34" r="7" fill="#28c840"/>
+  <text x="600" y="39" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" fill="#6b7280">glimmer-claude-code · 127.0.0.1:8000 · no cloud</text>
+  <line x1="0" y1="56" x2="1200" y2="56" stroke="#2d333f"/>
+
+  <!-- prompt lines -->
+  <text x="48" y="106" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="19" fill="#9ca3af">
+    <tspan fill="#28c840">$</tspan> llama-server -m Muse-Glimmer-30B-UD-Q4_K_XL.gguf <tspan fill="#6b7280"># 15.9GB, 4-bit</tspan>
+  </text>
+  <text x="48" y="140" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="19" fill="#9ca3af">
+    <tspan fill="#28c840">$</tspan> claude <tspan fill="#6b7280"># Anthropic API → LiteLLM → your MacBook</tspan>
+  </text>
+
+  <!-- headline -->
+  <text x="48" y="205" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="40" font-weight="700" fill="#e6edf3">Claude Code, fully local on Meta's Glimmer-30B</text>
+  <rect x="48" y="222" width="380" height="4" rx="2" fill="url(#accent)"/>
+
+  <!-- stat chips -->
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="16">
+    <rect x="48"  y="248" width="150" height="38" rx="19" fill="#1c2330" stroke="#2d333f"/>
+    <text x="123" y="272" text-anchor="middle" fill="#38bdf8">22 tok/s fresh</text>
+
+    <rect x="210" y="248" width="146" height="38" rx="19" fill="#1c2330" stroke="#2d333f"/>
+    <text x="283" y="272" text-anchor="middle" fill="#f97316">7 tok/s deep</text>
+
+    <rect x="368" y="248" width="190" height="38" rx="19" fill="#1c2330" stroke="#2d333f"/>
+    <text x="463" y="272" text-anchor="middle" fill="#e879f9">drafter: 1.0x measured</text>
+
+    <rect x="570" y="248" width="196" height="38" rx="19" fill="#1c2330" stroke="#2d333f"/>
+    <text x="668" y="272" text-anchor="middle" fill="#9ca3af">cold start: 4 min</text>
+
+    <rect x="778" y="248" width="230" height="38" rx="19" fill="#1c2330" stroke="#2d333f"/>
+    <text x="893" y="272" text-anchor="middle" fill="#9ca3af">M4 Max · 36GB · offline</text>
+  </g>
+</svg>

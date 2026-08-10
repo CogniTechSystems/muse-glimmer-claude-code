@@ -1,0 +1,33 @@
+{
+  "_note": "Replace these two placeholders with the ten cases the Arc ran, so the numbers are directly comparable. 'expect' = substrings checked case-insensitively against the response; 'match' = 'any' or 'all'.",
+  "cases": [
+    {
+      "id": "smoke-arithmetic",
+      "prompt": "What is 17 * 23? Reply with just the number.",
+      "expect": [
+        "391"
+      ],
+      "match": "any",
+      "max_tokens": 1024
+    },
+    {
+      "id": "smoke-extraction",
+      "prompt": "Extract the email address from this text and reply with only the address: 'Contact Maria Reyes (m.reyes@example.org) for scheduling.'",
+      "expect": [
+        "m.reyes@example.org"
+      ],
+      "match": "any",
+      "max_tokens": 1024
+    },
+    {
+      "id": "smoke-longcode",
+      "prompt": "Write a complete Python implementation of a doubly linked list with insert, delete, find, reverse, and __iter__ methods, plus docstrings.",
+      "expect": [
+        "def insert",
+        "def reverse"
+      ],
+      "match": "all",
+      "max_tokens": 3072
+    }
+  ]
+}

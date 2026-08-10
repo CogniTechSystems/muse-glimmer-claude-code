@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Claude Code fully local on Meta's Glimmer-30B">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#161b27"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f97316"/>
+      <stop offset="0.5" stop-color="#e879f9"/>
+      <stop offset="1" stop-color="#38bdf8"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- terminal card -->
+  <rect x="80" y="70" width="1040" height="490" rx="20" fill="#10151f" stroke="#2d333f"/>
+  <circle cx="118" cy="106" r="8" fill="#ff5f57"/>
+  <circle cx="146" cy="106" r="8" fill="#febc2e"/>
+  <circle cx="174" cy="106" r="8" fill="#28c840"/>
+  <text x="600" y="112" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="16" fill="#6b7280">glimmer-claude-code · 127.0.0.1:8000 · no cloud</text>
+  <line x1="80" y1="132" x2="1120" y2="132" stroke="#2d333f"/>
+
+  <!-- prompt lines -->
+  <text x="124" y="186" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="21" fill="#9ca3af">
+    <tspan fill="#28c840">$</tspan> llama-server -m Muse-Glimmer-30B-UD-Q4_K_XL.gguf <tspan fill="#6b7280"># 15.9GB</tspan>
+  </text>
+  <text x="124" y="224" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="21" fill="#9ca3af">
+    <tspan fill="#28c840">$</tspan> claude <tspan fill="#6b7280"># Anthropic API → LiteLLM → your MacBook</tspan>
+  </text>
+
+  <!-- headline -->
+  <text x="124" y="316" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="54" font-weight="800" fill="#e6edf3">Claude Code, fully local</text>
+  <text x="124" y="378" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="54" font-weight="800" fill="#e6edf3">on Meta's Glimmer-30B</text>
+  <rect x="124" y="402" width="420" height="5" rx="2.5" fill="url(#accent)"/>
+
+  <text x="124" y="452" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="24" fill="#9ca3af">Setup, benchmarks, and the flags the demos don't mention.</text>
+
+  <!-- stat chips -->
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="17">
+    <rect x="124" y="486" width="160" height="42" rx="21" fill="#1c2330" stroke="#2d333f"/>
+    <text x="204" y="512" text-anchor="middle" fill="#38bdf8">22 tok/s fresh</text>
+
+    <rect x="296" y="486" width="156" height="42" rx="21" fill="#1c2330" stroke="#2d333f"/>
+    <text x="374" y="512" text-anchor="middle" fill="#f97316">7 tok/s deep</text>
+
+    <rect x="464" y="486" width="200" height="42" rx="21" fill="#1c2330" stroke="#2d333f"/>
+    <text x="564" y="512" text-anchor="middle" fill="#e879f9">drafter: 1.0x measured</text>
+
+    <rect x="676" y="486" width="184" height="42" rx="21" fill="#1c2330" stroke="#2d333f"/>
+    <text x="768" y="512" text-anchor="middle" fill="#9ca3af">cold start: 4 min</text>
+  </g>
+</svg>

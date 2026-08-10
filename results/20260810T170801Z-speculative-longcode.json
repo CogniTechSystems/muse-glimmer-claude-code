@@ -1,0 +1,41 @@
+{
+  "label": "speculative-longcode",
+  "target": "local",
+  "model": "glimmer",
+  "timestamp": "2026-08-10T17:08:01.754191+00:00",
+  "passed": 3,
+  "total": 3,
+  "mean_tok_s": 21.87,
+  "results": [
+    {
+      "text": "391",
+      "wall_s": 2.766,
+      "completion_tokens": 56,
+      "wall_tok_s": 20.25,
+      "server_tok_s": 22.1,
+      "prompt_tok_s": 23.47,
+      "id": "smoke-arithmetic",
+      "pass": true
+    },
+    {
+      "text": "m.reyes@example.org",
+      "wall_s": 6.255,
+      "completion_tokens": 147,
+      "wall_tok_s": 23.5,
+      "server_tok_s": 25.17,
+      "prompt_tok_s": 85.16,
+      "id": "smoke-extraction",
+      "pass": true
+    },
+    {
+      "text": "```python\nclass Node:\n    \"\"\"Node for a doubly linked list.\"\"\"\n    __slots__ = (\"value\", \"prev\", \"next\")\n\n    def __init__(self, value):\n        self.value = value\n        self.prev = None\n        self.next = None\n\n\nclass DoublyLinkedList:\n    \"\"\"A simple doubly linked list with O(1) head/tail operations.\"\"\"\n\n    def __init__(self):\n        self.head = None\n        self.tail = None\n        self._size = 0\n\n    def __len__(self):\n        return self._size\n\n    def __iter__(self):\n        \"\"\"Yield values from head to tail.\"\"\"\n        current = self.head\n        while current:\n            yield current.value\n            current = current.next\n\n    def __repr__(self):\n        return f\"DoublyLinkedList([{', '.join(repr(v) for v in self)}])\"\n\n    def _node_at(self, index):\n        \"\"\"Return node at index, assumes 0 <= index < size.\"\"\"\n        if index < self._size // 2:\n            cur = self.head\n            for _ in range(index):\n                cur = cur.next\n        else:\n            cur = self.tail\n            for _ in range(self._size - 1 - index):\n                cur = cur.prev\n        return cur\n\n    def find(self, value):\n        \"\"\"Return the index of first occurrence of value, or -1 if not found.\"\"\"\n        cur = self.head\n        idx = 0\n        while cur:\n            if cur.value == value:\n                return idx\n            cur = cur.next\n            idx += 1\n        return -1\n\n    def insert(self, value, index=None):\n        \"\"\"\n        Insert value at index. If index is None or >= size, append at tail.\n        If index <= 0, insert at head.\n        \"\"\"\n        new_node = Node(value)\n\n        if self._size == 0:\n            self.head = self.tail = new_node\n            self._size = 1\n            return\n\n        if index is None or index >= self._size:\n            # append\n            new_node.prev = self.tail\n            self.tail.next = new_node\n            self.tail = new_node\n        elif index <= 0:\n            # prepend\n            new_node.next = self.head\n            self.head.prev = new_node\n            self.head = new_node\n        else:\n            current = self._node_at(index)\n            prev_node = current.prev\n\n            new_node.next = current\n            new_node.prev = prev_node\n            current.prev = new_node\n\n            if prev_node:\n                prev_node.next = new_node\n            else:\n                self.head = new_node\n\n        self._size += 1\n\n    def delete(self, value):\n        \"\"\"\n        Delete first node with the given value.\n        Returns True if deleted, False if not found.\n        \"\"\"\n        cur = self.head\n        while cur:\n            if cur.value == value:\n                if cur.prev:\n                    cur.prev.next = cur.next\n                else:\n                    self.head = cur.next\n\n                if cur.next:\n                    cur.next.prev = cur.prev\n                else:\n                    self.tail = cur.prev\n\n                self._size -= 1\n                return True\n            cur = cur.next\n        return False\n\n    def reverse(self):\n        \"\"\"Reverse the list in place.\"\"\"\n        cur = self.head\n        self.head, self.tail = self.tail, self.head\n\n        while cur:\n            cur.prev, cur.next = cur.next, cur.prev\n            cur = cur.prev  # because we just swapped\n        # size unchanged\n\n\n# Example usage\nif __name__ == \"__main__\":\n    dll = DoublyLinkedList()\n    dll.insert(10)\n    dll.insert(20)\n    dll.insert(30, index=1)   # 10, 30, 20\n    dll.insert(5, index=0)    # 5, 10, 30, 20\n\n    print(dll)                # DoublyLinkedList([5, 10, 30, 20])\n    print(\"find 30:\", dll.find(30))  # 2\n\n    dll.delete(10)\n    print(dll)                # DoublyLinkedList([5, 30, 20])\n\n    dll.reverse()\n    print(dll)                # DoublyLinkedList([20, 30, 5])\n\n    print(list(dll))          # [20, 30, 5]\n```\n\nThe list supports `insert(value, index=None)`, `delete(value)`, `find(value)`, `reverse()`, and iteration via `__iter__`. All operations maintain correct `prev`/`next` links and size.",
+      "wall_s": 99.279,
+      "completion_tokens": 1813,
+      "wall_tok_s": 18.26,
+      "server_tok_s": 18.34,
+      "prompt_tok_s": 86.8,
+      "id": "smoke-longcode",
+      "pass": true
+    }
+  ]
+}

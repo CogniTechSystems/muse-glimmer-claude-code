@@ -1,0 +1,9 @@
+model_list:
+  - model_name: glimmer
+    litellm_params:
+      model: openai/glimmer
+      api_base: http://127.0.0.1:8000/v1
+      api_key: none
+
+litellm_settings:
+  drop_params: true
