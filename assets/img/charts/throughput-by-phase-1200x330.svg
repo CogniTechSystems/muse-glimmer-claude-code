@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="330" viewBox="0 0 1200 330" role="img" aria-label="Throughput by phase: prompt prefill 120 to 150 tokens per second, generation on fresh context 22, generation at 29k tokens deep 7">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="330" viewBox="0 0 1200 330" role="img" aria-label="Throughput by phase: prompt prefill about 110 tokens per second, generation on fresh context 22, generation at 29k tokens deep 7">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#0d1117"/>
@@ -23,9 +23,9 @@
 
   <!-- bars: baseline-square left, 4px rounded data-end -->
   <g fill="#0284c7">
-    <path d="M330,118 H1017.9 Q1021.9,118 1021.9,122 V134 Q1021.9,138 1017.9,138 H330 Z"/>
-    <path d="M330,172 H438.75 Q442.75,172 442.75,176 V188 Q442.75,192 438.75,192 H330 Z"/>
-    <path d="M330,226 H361.9 Q365.9,226 365.9,230 V242 Q365.9,246 361.9,246 H330 Z"/>
+    <path d="M330,118 H1077.7 Q1081.7,118 1081.7,122 V134 Q1081.7,138 1077.7,138 H330 Z"/>
+    <path d="M330,172 H476.3 Q480.3,172 480.3,176 V188 Q480.3,192 476.3,192 H330 Z"/>
+    <path d="M330,226 H373.8 Q377.8,226 377.8,230 V242 Q377.8,246 373.8,246 H330 Z"/>
   </g>
 
   <!-- category labels -->
@@ -37,19 +37,19 @@
 
   <!-- value labels at bar tips -->
   <g font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="15" fill="#e6edf3">
-    <text x="1033.9" y="133">120–150</text>
-    <text x="454.75" y="187">22</text>
-    <text x="377.9" y="241">7</text>
+    <text x="1093.7" y="133">~110</text>
+    <text x="492.3" y="187">22</text>
+    <text x="389.8" y="241">7</text>
   </g>
 
   <!-- x-axis ticks -->
   <g font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" fill="#6b7280" text-anchor="middle">
     <text x="330" y="280">0</text>
-    <text x="535" y="280">40</text>
-    <text x="740" y="280">80</text>
-    <text x="945" y="280">120</text>
-    <text x="1150" y="280">160</text>
+    <text x="535" y="280">30</text>
+    <text x="740" y="280">60</text>
+    <text x="945" y="280">90</text>
+    <text x="1150" y="280">120</text>
   </g>
 
-  <text x="48" y="308" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" fill="#6b7280">prefill varies 120–150 tok/s with prompt shape · M4 Max · 36GB · llama.cpp b10355</text>
+  <text x="48" y="308" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" fill="#6b7280">prefill measured through the full stack: 1,322 prompt tokens in 12s · M4 Max · 36GB · llama.cpp b10355</text>
 </svg>

@@ -20,7 +20,7 @@ In this project you will do the following:
 
 ## Measured performance
 
-![Throughput by phase: prefill 120–150 tok/s, generation 22 tok/s fresh, 7 tok/s at ~29k tokens deep](assets/img/charts/throughput-by-phase-1200x330.png)
+![Throughput by phase: prefill ~110 tok/s, generation 22 tok/s fresh, 7 tok/s at ~29k tokens deep](assets/img/charts/throughput-by-phase-1200x330.png)
 
 ![Speculative decoding measured at 1.0x overall: server tok/s per benchmark case for baseline, speculative, and speculative-tuned configurations](assets/img/charts/speculative-decoding-1200x400.png)
 
@@ -28,8 +28,8 @@ In this project you will do the following:
 |---|---|
 | Generation, fresh context | ~22 tok/s |
 | Generation, ~29k tokens deep | ~7 tok/s |
-| Prompt prefill | 120 to 150 tok/s |
-| Speculative decoding (dflash) | 1.0x overall, bursts to ~20 tok/s in code |
+| Prompt prefill | ~110 tok/s |
+| Speculative decoding (dflash) | 0.9x to 1.0x measured, bursts to ~20 tok/s in code blocks |
 | Claude Code first response (cold) | ~4 minutes |
 | Claude Code later turns (cached) | ~1 minute |
 

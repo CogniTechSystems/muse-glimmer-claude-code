@@ -1,0 +1,41 @@
+{
+  "label": "baseline-longcode",
+  "target": "local",
+  "model": "glimmer",
+  "timestamp": "2026-08-11T13:29:11.952331+00:00",
+  "passed": 3,
+  "total": 3,
+  "mean_tok_s": 21.7,
+  "results": [
+    {
+      "text": "391",
+      "wall_s": 5.086,
+      "completion_tokens": 106,
+      "wall_tok_s": 20.84,
+      "server_tok_s": 22.66,
+      "prompt_tok_s": 43.28,
+      "id": "smoke-arithmetic",
+      "pass": true
+    },
+    {
+      "text": "m.reyes@example.org",
+      "wall_s": 8.144,
+      "completion_tokens": 172,
+      "wall_tok_s": 21.12,
+      "server_tok_s": 22.11,
+      "prompt_tok_s": 88.54,
+      "id": "smoke-extraction",
+      "pass": true
+    },
+    {
+      "text": "```python\nclass Node:\n    \"\"\"Node for a doubly linked list.\"\"\"\n    def __init__(self, data):\n        self.data = data\n        self.prev = None\n        self.next = None\n\n\nclass DoublyLinkedList:\n    \"\"\"A simple doubly linked list with O(1) head/tail operations.\"\"\"\n\n    def __init__(self):\n        self.head = None\n        self.tail = None\n        self._size = 0\n\n    def __len__(self):\n        return self._size\n\n    def __iter__(self):\n        \"\"\"Yield values from head to tail.\"\"\"\n        current = self.head\n        while current:\n            yield current.data\n            current = current.next\n\n    def __repr__(self):\n        return f\"DoublyLinkedList([{', '.join(str(v) for v in self)}])\"\n\n    def insert(self, data, index=None):\n        \"\"\"\n        Insert data at index.\n        If index is None or >= size, append at tail.\n        If index <= 0, insert at head.\n        \"\"\"\n        new_node = Node(data)\n\n        if self.head is None:\n            self.head = self.tail = new_node\n            self._size = 1\n            return\n\n        if index is None or index >= self._size:\n            # append\n            new_node.prev = self.tail\n            self.tail.next = new_node\n            self.tail = new_node\n        elif index <= 0:\n            # prepend\n            new_node.next = self.head\n            self.head.prev = new_node\n            self.head = new_node\n        else:\n            # insert in middle\n            current = self.head\n            for _ in range(index):\n                current = current.next\n            new_node.prev = current.prev\n            new_node.next = current\n            current.prev.next = new_node\n            current.prev = new_node\n\n        self._size += 1\n\n    def delete(self, index):\n        \"\"\"\n        Delete node at index and return its data.\n        Raises IndexError if index is out of range.\n        \"\"\"\n        if index < 0 or index >= self._size or self.head is None:\n            raise IndexError(\"index out of range\")\n\n        if index == 0:\n            node = self.head\n            self.head = node.next\n            if self.head:\n                self.head.prev = None\n            else:\n                self.tail = None\n        elif index == self._size - 1:\n            node = self.tail\n            self.tail = node.prev\n            self.tail.next = None\n        else:\n            current = self.head\n            for _ in range(index):\n                current = current.next\n            node = current\n            node.prev.next = node.next\n            node.next.prev = node.prev\n\n        self._size -= 1\n        return node.data\n\n    def find(self, value):\n        \"\"\"\n        Return the index of the first occurrence of value, or None if not found.\n        \"\"\"\n        current = self.head\n        idx = 0\n        while current:\n            if current.data == value:\n                return idx\n            current = current.next\n            idx += 1\n        return None\n\n    def reverse(self):\n        \"\"\"Reverse the list in place.\"\"\"\n        current = self.head\n        while current:\n            # swap prev and next\n            current.prev, current.next = current.next, current.prev\n            # move to next node, which is now prev after swap\n            current = current.prev\n        self.head, self.tail = self.tail, self.head\n\n\n# Example usage\nif __name__ == \"__main__\":\n    dll = DoublyLinkedList()\n    for v in [1, 2, 3, 4]:\n        dll.insert(v)\n\n    dll.insert(0, 0)          # prepend\n    dll.insert(2.5, 3)        # insert in middle\n\n    print(dll)                # DoublyLinkedList([0, 1, 2, 2.5, 3, 4])\n    print(\"find 2.5 ->\", dll.find(2.5))\n    print(\"delete index 2 ->\", dll.delete(2))\n\n    print(list(dll))          # [0, 1, 2.5, 3, 4]\n\n    dll.reverse()\n    print(dll)                # DoublyLinkedList([4, 3, 2.5, 1, 0])\n```\n\nThe list supports `insert(data, index)`, `delete(index)`, `find(value)`, `reverse()`, and iteration via `__iter__`. All operations maintain `prev`/`next` links and the size counter.",
+      "wall_s": 93.794,
+      "completion_tokens": 1897,
+      "wall_tok_s": 20.23,
+      "server_tok_s": 20.32,
+      "prompt_tok_s": 80.64,
+      "id": "smoke-longcode",
+      "pass": true
+    }
+  ]
+}

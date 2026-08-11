@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400" role="img" aria-label="Speculative decoding measured at 1.0x overall: server tokens per second per benchmark case for baseline, speculative, and speculative-tuned configurations">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400" role="img" aria-label="Speculative decoding measured at 0.9x to 1.0x: server tokens per second per benchmark case for baseline, speculative, and speculative-tuned configurations">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#0d1117"/>
@@ -9,7 +9,7 @@
   <rect width="1200" height="400" rx="16" fill="url(#bg)"/>
   <rect x="0.5" y="0.5" width="1199" height="399" rx="16" fill="none" stroke="#2d333f"/>
 
-  <text x="48" y="52" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="26" font-weight="700" fill="#e6edf3">Speculative decoding: 1.0x overall</text>
+  <text x="48" y="52" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="26" font-weight="700" fill="#e6edf3">Speculative decoding: 0.9x to 1.0x measured</text>
   <text x="48" y="78" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" fill="#6b7280">server tok/s per benchmark case · dflash drafter · higher is better</text>
 
   <!-- legend -->
@@ -46,14 +46,15 @@
   <path d="M629,330 V144.0 Q629,140.0 633,140.0 H647 Q651,140.0 651,144.0 V330 Z" fill="#ea580c"/>
   <path d="M653,330 V186.9 Q653,182.9 657,182.9 H671 Q675,182.9 675,186.9 V330 Z" fill="#c026d3"/>
 
-  <!-- smoke-longcode: speculative 18.34 -->
-  <path d="M949,330 V195.8 Q949,191.8 953,191.8 H967 Q971,191.8 971,195.8 V330 Z" fill="#ea580c"/>
+  <!-- smoke-longcode: baseline 20.32, speculative 18.34 -->
+  <path d="M937,330 V180.9 Q937,176.9 941,176.9 H955 Q959,176.9 959,180.9 V330 Z" fill="#0284c7"/>
+  <path d="M961,330 V195.8 Q961,191.8 965,191.8 H979 Q983,191.8 983,195.8 V330 Z" fill="#ea580c"/>
 
   <!-- selective direct labels: extreme per group -->
   <g font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" fill="#e6edf3" text-anchor="middle">
     <text x="296" y="155">22.1</text>
     <text x="640" y="132">25.2</text>
-    <text x="960" y="184">18.3</text>
+    <text x="948" y="169">20.3</text>
   </g>
 
   <!-- case labels -->
@@ -62,7 +63,7 @@
     <text x="640" y="358">smoke-extraction</text>
     <text x="960" y="358">smoke-longcode</text>
   </g>
-  <text x="960" y="376" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" fill="#6b7280" text-anchor="middle">speculative config only</text>
+  <text x="960" y="376" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" fill="#6b7280" text-anchor="middle">no tuned run</text>
 
-  <text x="48" y="390" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" fill="#6b7280">one run per configuration · raw JSON in results/</text>
+  <text x="48" y="390" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" fill="#6b7280">one run per configuration · longcode baseline measured after a later restart · raw JSON in results/</text>
 </svg>
