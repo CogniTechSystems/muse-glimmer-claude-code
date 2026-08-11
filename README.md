@@ -117,7 +117,6 @@ curl -s http://127.0.0.1:8000/v1/chat/completions -H "Content-Type: application/
 Glimmer is a reasoning model: it thinks in `reasoning_content` before
 answering in `content`, so use `max_tokens` of 500+ or the answer is empty.
 Speculation is active only if `draft_n` appears in the response `timings`.
-Browser chat UI: http://127.0.0.1:8000.
 
 ## 5. Benchmark
 
@@ -125,10 +124,20 @@ Browser chat UI: http://127.0.0.1:8000.
 python3 bench/run_bench.py --target local --label <name>
 ```
 
+## 6. Console
+
+![The meaning of life](assets/img/meaning-of-life.jpg)
+
+A local server is started with a UI for inference. YOu can access the UI on the following address. Go ahead and ask it something meaningful, like "What is the meaning of life?"
+
+```
+ http://127.0.0.1:8000.
+```
+
 Runs the cases in `bench/cases.json`, prints pass/fail and tok/s, writes JSON
 to `results/`. Stdlib Python only; works with any OpenAI compatible server.
 
-## 6. Claude Code
+## 7. Claude Code
 
 Claude Code speaks the Anthropic Messages API, llama-server speaks OpenAI;
 LiteLLM bridges them. One-time setup (LiteLLM does not run on Python 3.14,
