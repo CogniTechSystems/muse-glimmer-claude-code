@@ -20,6 +20,10 @@ In this project you will do the following:
 
 ## Measured performance
 
+![Throughput by phase: prefill 120–150 tok/s, generation 22 tok/s fresh, 7 tok/s at ~29k tokens deep](assets/img/charts/throughput-by-phase-1200x330.png)
+
+![Speculative decoding measured at 1.0x overall: server tok/s per benchmark case for baseline, speculative, and speculative-tuned configurations](assets/img/charts/speculative-decoding-1200x400.png)
+
 | Scenario | Measured |
 |---|---|
 | Generation, fresh context | ~22 tok/s |
@@ -175,6 +179,8 @@ The variables apply only to that terminal.
 Expect the performance table above: ~4 minutes cold, ~1 minute per turn
 after. Keep tasks small; every tool call is a round trip at local speed.
 
+![Claude Code turn time: first response with cold prefill about 4 minutes, later turns with prefix cache about 1 minute](assets/img/charts/claude-code-turns-1200x300.png)
+
 ## Troubleshooting
 
 All errors below were hit while building this project.
@@ -202,7 +208,7 @@ bench/run_bench.py    benchmark runner
 litellm-config.yaml   LiteLLM proxy config
 start.sh              server launcher
 results/              benchmark output (JSON)
-assets/               banners and social cards
+assets/               banners, social cards, and result charts
 ```
 
 ## Contributing

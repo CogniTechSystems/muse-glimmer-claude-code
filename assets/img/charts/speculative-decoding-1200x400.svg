@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400" role="img" aria-label="Speculative decoding measured at 1.0x overall: server tokens per second per benchmark case for baseline, speculative, and speculative-tuned configurations">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#161b27"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="400" rx="16" fill="url(#bg)"/>
+  <rect x="0.5" y="0.5" width="1199" height="399" rx="16" fill="none" stroke="#2d333f"/>
+
+  <text x="48" y="52" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="26" font-weight="700" fill="#e6edf3">Speculative decoding: 1.0x overall</text>
+  <text x="48" y="78" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" fill="#6b7280">server tok/s per benchmark case · dflash drafter · higher is better</text>
+
+  <!-- legend -->
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" fill="#9ca3af">
+    <rect x="722" y="37" width="12" height="12" rx="3" fill="#0284c7"/>
+    <text x="740" y="48">baseline</text>
+    <rect x="831" y="37" width="12" height="12" rx="3" fill="#ea580c"/>
+    <text x="849" y="48">speculative</text>
+    <rect x="965" y="37" width="12" height="12" rx="3" fill="#c026d3"/>
+    <text x="983" y="48">speculative-tuned</text>
+  </g>
+
+  <!-- gridlines + y ticks -->
+  <g stroke="#1f2632" stroke-width="1">
+    <line x1="70" y1="104" x2="1150" y2="104"/>
+    <line x1="70" y1="179.3" x2="1150" y2="179.3"/>
+    <line x1="70" y1="254.7" x2="1150" y2="254.7"/>
+  </g>
+  <line x1="70" y1="330" x2="1150" y2="330" stroke="#2d333f" stroke-width="1"/>
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" fill="#6b7280" text-anchor="end">
+    <text x="58" y="334">0</text>
+    <text x="58" y="258.7">10</text>
+    <text x="58" y="183.3">20</text>
+    <text x="58" y="108">30</text>
+  </g>
+
+  <!-- smoke-arithmetic: baseline 22.12, speculative 21.99, tuned 19.15 -->
+  <path d="M285,330 V167.4 Q285,163.4 289,163.4 H303 Q307,163.4 307,167.4 V330 Z" fill="#0284c7"/>
+  <path d="M309,330 V168.3 Q309,164.3 313,164.3 H327 Q331,164.3 331,168.3 V330 Z" fill="#ea580c"/>
+  <path d="M333,330 V189.7 Q333,185.7 337,185.7 H351 Q355,185.7 355,189.7 V330 Z" fill="#c026d3"/>
+
+  <!-- smoke-extraction: baseline 25.21, speculative 25.22, tuned 19.53 -->
+  <path d="M605,330 V144.1 Q605,140.1 609,140.1 H623 Q627,140.1 627,144.1 V330 Z" fill="#0284c7"/>
+  <path d="M629,330 V144.0 Q629,140.0 633,140.0 H647 Q651,140.0 651,144.0 V330 Z" fill="#ea580c"/>
+  <path d="M653,330 V186.9 Q653,182.9 657,182.9 H671 Q675,182.9 675,186.9 V330 Z" fill="#c026d3"/>
+
+  <!-- smoke-longcode: speculative 18.34 -->
+  <path d="M949,330 V195.8 Q949,191.8 953,191.8 H967 Q971,191.8 971,195.8 V330 Z" fill="#ea580c"/>
+
+  <!-- selective direct labels: extreme per group -->
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" fill="#e6edf3" text-anchor="middle">
+    <text x="296" y="155">22.1</text>
+    <text x="640" y="132">25.2</text>
+    <text x="960" y="184">18.3</text>
+  </g>
+
+  <!-- case labels -->
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="15" fill="#9ca3af" text-anchor="middle">
+    <text x="320" y="358">smoke-arithmetic</text>
+    <text x="640" y="358">smoke-extraction</text>
+    <text x="960" y="358">smoke-longcode</text>
+  </g>
+  <text x="960" y="376" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" fill="#6b7280" text-anchor="middle">speculative config only</text>
+
+  <text x="48" y="390" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" fill="#6b7280">one run per configuration · raw JSON in results/</text>
+</svg>

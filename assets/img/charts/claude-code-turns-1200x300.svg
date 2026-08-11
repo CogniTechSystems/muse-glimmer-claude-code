@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-label="Claude Code turn time: first response with cold prefill about 4 minutes, later turns with prefix cache about 1 minute">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#161b27"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="300" rx="16" fill="url(#bg)"/>
+  <rect x="0.5" y="0.5" width="1199" height="299" rx="16" fill="none" stroke="#2d333f"/>
+
+  <text x="48" y="52" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="26" font-weight="700" fill="#e6edf3">Claude Code turn time</text>
+  <text x="48" y="78" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" fill="#6b7280">wall-clock per response · 32k context via LiteLLM · lower is better</text>
+
+  <!-- gridlines -->
+  <g stroke="#1f2632" stroke-width="1">
+    <line x1="526.8" y1="96" x2="526.8" y2="230"/>
+    <line x1="723.6" y1="96" x2="723.6" y2="230"/>
+    <line x1="920.4" y1="96" x2="920.4" y2="230"/>
+    <line x1="1117.2" y1="96" x2="1117.2" y2="230"/>
+  </g>
+  <line x1="330" y1="96" x2="330" y2="230" stroke="#2d333f" stroke-width="1"/>
+
+  <!-- bars -->
+  <g fill="#0284c7">
+    <path d="M330,118 H1113.2 Q1117.2,118 1117.2,122 V134 Q1117.2,138 1113.2,138 H330 Z"/>
+    <path d="M330,174 H522.8 Q526.8,174 526.8,178 V190 Q526.8,194 522.8,194 H330 Z"/>
+  </g>
+
+  <!-- category labels -->
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="15" fill="#9ca3af" text-anchor="end">
+    <text x="315" y="133">First response · cold prefill</text>
+    <text x="315" y="189">Later turns · prefix cached</text>
+  </g>
+
+  <!-- value labels -->
+  <text x="1101.2" y="133" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="15" fill="#ffffff" text-anchor="end">~4 min</text>
+  <text x="538.8" y="189" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="15" fill="#e6edf3">~1 min</text>
+
+  <!-- x-axis ticks -->
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" fill="#6b7280" text-anchor="middle">
+    <text x="330" y="252">0</text>
+    <text x="526.8" y="252">1 min</text>
+    <text x="723.6" y="252">2 min</text>
+    <text x="920.4" y="252">3 min</text>
+    <text x="1117.2" y="252">4 min</text>
+  </g>
+
+  <text x="48" y="280" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" fill="#6b7280">cold turn pays the full system-prompt prefill · later turns reuse it via --cache-reuse</text>
+</svg>
